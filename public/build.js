@@ -9508,6 +9508,28 @@ var Content = exports.Content = function (_React$Component) {
   }
 
   _createClass(Content, [{
+    key: 'sendMail',
+    value: function sendMail() {
+      swal({
+        title: "Send Mail!",
+        text: "Write something interesting:",
+        type: "input",
+        showCancelButton: true,
+        closeOnConfirm: false,
+        animation: "slide-from-top",
+        inputPlaceholder: "Write something"
+      }, function (inputValue) {
+        if (inputValue === false) return false;
+
+        if (inputValue === "") {
+          swal.showInputError("You need to write something!");
+          return false;
+        }
+
+        sweetAlert("Oops...", "Temporarily out of service!!!", "error");
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -9585,7 +9607,8 @@ var Content = exports.Content = function (_React$Component) {
                       )
                     )
                   )
-                )
+                ),
+                _react2.default.createElement('i', { className: 'fa fa-paper-plane-o', 'aria-hidden': 'true', style: { marginLeft: 1 + 'em', cursor: 'pointer' }, onClick: this.sendMail.bind(this) })
               )
             )
           )
@@ -9710,32 +9733,32 @@ var Main = exports.Main = function (_React$Component) {
 
   _createClass(Main, [{
     key: 'componentWillMount',
-    value: function componentWillMount() {
-      console.log('Before mount...');
-    }
+    value: function componentWillMount() {}
+    // console.log('Before mount...');
+
 
     //Despues de montar el componente
 
   }, {
     key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.log('Mount');
-    }
+    value: function componentDidMount() {}
+    // console.log('Mount');
+
 
     //Se invocará antes del render, justo antes que tu componente se haya actualizado (recibiendo nuevas props o state).
 
   }, {
     key: 'componentWillUpdate',
-    value: function componentWillUpdate() {
-      console.log('Update MyComponent');
-    }
+    value: function componentWillUpdate() {}
+    // console.log('Update MyComponent');
+
 
     //Se invoca inmediatamente después del render, justo cuando tu componente a cambiado.
 
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      console.log('prevPros or prevState');
+      // console.log('prevPros or prevState');
     }
   }, {
     key: 'render',

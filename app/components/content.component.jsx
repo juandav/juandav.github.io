@@ -37,6 +37,28 @@ export class Content extends React.Component {
     };
   }
 
+  sendMail() {
+    swal({
+      title: "Send Mail!",
+      text: "Write something interesting:",
+      type: "input",
+      showCancelButton: true,
+      closeOnConfirm: false,
+      animation: "slide-from-top",
+      inputPlaceholder: "Write something"
+    },
+    function(inputValue){
+      if (inputValue === false) return false;
+
+      if (inputValue === "") {
+        swal.showInputError("You need to write something!");
+        return false
+      }
+
+      sweetAlert("Oops...", "Temporarily out of service!!!", "error");
+    });
+  }
+
   render() {
     return (
       <div className="content tooltip">
@@ -49,6 +71,8 @@ export class Content extends React.Component {
               <p className="bio">{this.state.bio}</p>
 
               <div className="container">
+
+
                 <button className="btn"><span>Profiles</span><i className="material-icons">public</i>
                   <ul className="dropdown">
                     <li className="active">
@@ -62,6 +86,7 @@ export class Content extends React.Component {
                     </li>
                   </ul>
                 </button>
+                <i className="fa fa-paper-plane-o" aria-hidden="true" style={{marginLeft: 1 + 'em', cursor:'pointer'}} onClick={ this.sendMail.bind(this) }></i>
               </div>
 
             </div>
