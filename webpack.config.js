@@ -1,18 +1,17 @@
 module.exports = {
+  mode: 'production',
   entry: './app/main.jsx',
   output: {
     path: __dirname + "/public/",
     filename: "build.js",
   },
   module: {
-    loaders: [
+    rules: [
       {
+        test:/\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react']
-        }
+        use: 'babel-loader'
       }
     ]
   }
-};
+}
