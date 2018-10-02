@@ -1,8 +1,8 @@
 {
   "name": "juandav",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "juandav CV",
-  "main": "app/main.jsx",
+  "main": "core/main.jsx",
   "scripts": {
     "build": "webpack-cli",
     "patch": "npm --no-git-tag-version version patch",
