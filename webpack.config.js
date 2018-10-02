@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'production',
-  entry: './app/main.jsx',
+  entry: './core/main.jsx',
   output: {
     path: __dirname + "/public/",
     filename: "build.js",
