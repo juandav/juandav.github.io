@@ -16,11 +16,11 @@
   "author": "@juandav",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "@babel/core": "7.1.2",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.4",
+    "webpack": "4.20.2",
+    "webpack-cli": "3.1.2"
   },
   "dependencies": {
     "react": "^16.5.2",
