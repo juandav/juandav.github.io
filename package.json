@@ -16,7 +16,7 @@
   "author": "@juandav",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "7.10.4",
+    "@babel/core": "7.29.6",
     "@babel/preset-react": "7.10.4",
     "babel-loader": "8.1.0",
     "webpack": "4.43.0",
