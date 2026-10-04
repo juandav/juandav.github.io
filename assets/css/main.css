@@ -550,6 +550,51 @@ strong { color: #fff; font-weight: 600; }
 .beyond__title { font-family: var(--font-display); font-size: 18px; margin-bottom: 18px; }
 .beyond__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 32px; color: var(--muted); font-size: 15px; }
 
+/* ---------- Origin log ---------- */
+.terminal {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(5, 6, 26, 0.82);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+.terminal__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(45, 27, 105, 0.35);
+}
+.terminal__bar span { width: 11px; height: 11px; border-radius: 50%; background: #f87171; }
+.terminal__bar span:nth-child(2) { background: #fbbf24; }
+.terminal__bar span:nth-child(3) { background: var(--ok); }
+.terminal__bar p { margin-left: auto; font-size: 12px; color: var(--muted); letter-spacing: 0.08em; }
+.terminal__body { padding: 24px clamp(18px, 3vw, 32px) 28px; display: grid; gap: 18px; }
+.terminal__cmd { font-size: 14px; color: var(--lilac-soft); }
+.terminal__cmd::before { content: '$ '; color: var(--ok); }
+.terminal__cmd--idle .caret { width: 8px; height: 1em; }
+
+.origin { display: flex; align-items: center; gap: 22px; padding-left: 16px; }
+.origin img { width: 96px; height: 96px; border-radius: 50%; border: 2px solid #009688; flex-shrink: 0; }
+.origin__name { font-family: var(--font-body); font-size: 26px; color: #fff; }
+.origin__sub { color: #2dd4bf; font-style: italic; margin: 2px 0 8px; }
+.origin__bio { font-family: var(--font-body); color: var(--muted); max-width: 520px; }
+
+.origin__skills { display: grid; gap: 6px; padding-left: 16px; font-size: 14px; }
+.origin__skills > div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; }
+.origin__skills dt { color: #2dd4bf; }
+.origin__skills dd { color: var(--text); }
+
+.origin__links { display: flex; gap: 24px; padding-left: 16px; font-size: 14px; }
+
+@media (max-width: 720px) {
+  .origin { flex-direction: column; align-items: flex-start; }
+  .origin__skills > div { grid-template-columns: 1fr; gap: 0; margin-bottom: 6px; }
+}
+
 /* ---------- Comms ---------- */
 .comms { text-align: center; padding-bottom: 40px; }
 .comms .section__sub { margin: 14px auto 34px; max-width: 520px; }

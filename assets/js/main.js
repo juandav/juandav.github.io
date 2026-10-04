@@ -243,7 +243,7 @@
   });
 
   /* ---------- Scroll reveal ---------- */
-  const targets = document.querySelectorAll('.section__head, .mission, .briefing, .principles, .module, .sky, .clusters, .archive article, .beyond, .comms');
+  const targets = document.querySelectorAll('.section__head, .mission, .briefing, .principles, .module, .sky, .clusters, .archive article, .beyond, .terminal, .comms');
   if ('IntersectionObserver' in window && !reducedMotion) {
     const io = new IntersectionObserver(entries => {
       for (const e of entries) {
