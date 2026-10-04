@@ -95,7 +95,7 @@
   const ROLES = [
     'AI Engineer · LLM Systems & Agents',
     'AWS Certified Developer',
-    'Studying for AWS AI certification',
+    'En route: AWS Certified AI Practitioner',
     'Event-Driven & Streaming Architectures',
     'Problem solver first, coder second',
     'Handcrafted code + AI-guided engineering'
