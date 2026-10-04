@@ -1,40 +1,293 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico"
-  />
-  <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg"
-    color="#111" />
-  <title>@juandav || @juanqtx</title>
-  <link href='assets/devicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" type="" href="assets/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" ></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan David · AI Engineer</title>
+  <meta name="description" content="Juan David — AI Engineer with 10+ years building software: LLM systems, AI agents, event-driven architectures on AWS and real-time streaming.">
+  <meta name="theme-color" content="#05061a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='14' fill='%23a78bfa'/%3E%3Cellipse cx='32' cy='32' rx='28' ry='9' fill='none' stroke='%23f0abfc' stroke-width='3' transform='rotate(-20 32 32)'/%3E%3C/svg%3E">
 
-  <!-- Meta -->
-  <meta property="og:site_name" content="Juan David" />
-  <meta property="og:type" content="profile" />
-  <meta property="og:title" content="My resume. @juandav @juanqtx" />
-  <meta property="og:description" content="My resume, github, npm, skills, nodejs, linux..." />
-  <meta property="og:url" content="https://juandav.github.io" />
-  <meta property="article:published_time" content="2017-04-4T23:00:37.804Z" />
-  <meta property="article:modified_time" content="2017-04-4T23:00:06.058Z" />
+  <meta property="og:site_name" content="Juan David">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Juan David · AI Engineer">
+  <meta property="og:description" content="LLM systems, AI agents, event-driven architectures on AWS and real-time streaming. 10+ years building software.">
+  <meta property="og:url" content="https://juandav.github.io">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/12274145?v=4">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
-  <div id="app"></div>
-  <script src="public/build.js"></script>
-  <script src="https://use.fontawesome.com/875471f3cc.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126825634-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-126825634-1');
-  </script>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="nav__brand" href="#top" aria-label="Back to top">
+      <span class="nav__logo" aria-hidden="true"></span>JD
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#mission">Mission</a>
+      <a href="#briefing">Briefing</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#constellation">Stack</a>
+      <a href="#missions">Missions</a>
+      <a href="#comms" class="nav__cta">Open comms</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="hud">
+          <span class="hud__dot"></span>SIGNAL ACQUIRED · <span id="clock">--:--:-- UTC</span>
+        </p>
+        <h1 class="hero__title">Juan David</h1>
+        <p class="hero__role">
+          <span class="hero__prompt">&gt;</span>
+          <span id="typed" aria-live="polite">AI Engineer · LLM Systems &amp; Agents</span><span class="caret" aria-hidden="true"></span>
+        </p>
+        <p class="hero__lead">
+          10+ years building software, from cloud-native backends and real-time streaming
+          to AI-powered products. Problem solver first, coder second.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#mission">Current mission</a>
+          <a class="btn btn--ghost" href="mailto:e.juandav@gmail.com">e.juandav@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="orbit" aria-hidden="true">
+        <div class="orbit__ring orbit__ring--1"><span class="orbit__body orbit__body--aws">AWS</span></div>
+        <div class="orbit__ring orbit__ring--2"><span class="orbit__body orbit__body--ai">AI</span></div>
+        <div class="orbit__ring orbit__ring--3"><span class="orbit__body orbit__body--rt">RT</span></div>
+        <div class="orbit__core">
+          <img src="https://avatars.githubusercontent.com/u/12274145?v=4" alt="" width="180" height="180">
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#mission" aria-label="Scroll to current mission"><span></span></a>
+    </section>
+
+    <!-- ===================== CURRENT MISSION ===================== -->
+    <section class="section" id="mission">
+      <header class="section__head">
+        <p class="eyebrow">01 · Current mission</p>
+        <h2>Next orbit: AWS AI certification</h2>
+        <p class="section__sub">
+          Already AWS Certified Developer – Associate. Now actively preparing for AWS's AI certification,
+          going deep on generative AI on the cloud before shipping more of it.
+        </p>
+      </header>
+
+      <div class="mission">
+        <div class="trajectory" role="list" aria-label="Certification trajectory">
+          <div class="trajectory__node is-done" role="listitem">
+            <span class="trajectory__dot"></span>
+            <span class="trajectory__label">Launch</span>
+            <strong>AWS Certified Developer</strong>
+            <span class="tag tag--ok">Associate · achieved</span>
+          </div>
+          <div class="trajectory__path" aria-hidden="true"><span class="ship"></span></div>
+          <div class="trajectory__node is-active" role="listitem">
+            <span class="trajectory__dot"></span>
+            <span class="trajectory__label">In transit</span>
+            <strong>AWS AI Certification</strong>
+            <span class="tag tag--live">Studying now</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <p class="panel__title">Flight log · study modules</p>
+          <ul class="checklist">
+            <li>Foundation models &amp; generative AI fundamentals</li>
+            <li>Amazon Bedrock: models, agents &amp; knowledge bases</li>
+            <li>Retrieval-Augmented Generation on AWS</li>
+            <li>Amazon SageMaker &amp; the ML lifecycle</li>
+            <li>Prompt engineering &amp; model evaluation</li>
+            <li>Responsible AI, security &amp; governance</li>
+          </ul>
+          <div class="panel__foot">
+            <p>Ground training at <a href="https://platzi.com/p/juandav/" target="_blank" rel="noopener">Platzi</a></p>
+            <dl class="stats">
+              <div><dt>Points</dt><dd>6,394</dd></div>
+              <div><dt>Community answers</dt><dd>26</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BRIEFING ===================== -->
+    <section class="section" id="briefing">
+      <header class="section__head">
+        <p class="eyebrow">02 · Mission briefing</p>
+        <h2>Code is just the vehicle</h2>
+      </header>
+
+      <div class="briefing">
+        <div class="briefing__text">
+          <p>
+            I'm an <strong>AI Engineer</strong> with <strong>10+ years of experience</strong> building software:
+            full-stack platforms, cloud-native backends, <strong>event-driven systems</strong>,
+            <strong>real-time streaming</strong> and, today, <strong>AI-powered products</strong>.
+          </p>
+          <p>
+            The real job isn't writing code, it's solving problems. Before I build in a new domain
+            I go deep and learn it properly, so I can make engineering decisions I can stand behind.
+          </p>
+          <blockquote class="motto">“The best solutions are always the simplest solutions.”</blockquote>
+          <p>
+            I still enjoy writing <strong>handcrafted code</strong> line by line, and I also build
+            <strong>AI-guided</strong>. Knowing when to use each is part of the job.
+          </p>
+        </div>
+
+        <dl class="telemetry">
+          <div><dt>Role</dt><dd>AI Engineer</dd></div>
+          <div><dt>Experience</dt><dd>10+ years</dd></div>
+          <div><dt>Base</dt><dd>Colombia · Earth</dd></div>
+          <div><dt>Focus</dt><dd>LLM apps, AI agents, intelligent automation</dd></div>
+          <div><dt>Architecture</dt><dd>Event-driven, serverless &amp; cloud-native on AWS</dd></div>
+          <div><dt>Specialties</dt><dd>Streaming protocols, real-time systems, scraping</dd></div>
+          <div><dt>Mindset</dt><dd>Problems &gt; code · Depth &gt; shortcuts</dd></div>
+        </dl>
+      </div>
+
+      <ol class="principles">
+        <li><span>01</span><strong>Solve the problem, not the ticket.</strong> Understand the <em>why</em> before writing the <em>how</em>.</li>
+        <li><span>02</span><strong>Master the domain first.</strong> Real expertise beats guesswork.</li>
+        <li><span>03</span><strong>Simple scales.</strong> Clean architecture outlasts clever hacks.</li>
+        <li><span>04</span><strong>Measure, then optimize.</strong> Performance is a feature when data drives it.</li>
+        <li><span>05</span><strong>Craft meets copilot.</strong> Handcrafted where precision matters, AI-guided where speed matters.</li>
+      </ol>
+    </section>
+
+    <!-- ===================== CAPABILITIES ===================== -->
+    <section class="section" id="capabilities">
+      <header class="section__head">
+        <p class="eyebrow">03 · Mission capabilities</p>
+        <h2>Onboard systems</h2>
+      </header>
+
+      <div class="modules">
+        <article class="module">
+          <p class="module__id">MOD-01</p>
+          <h3>AI Engineering</h3>
+          <ul>
+            <li>LLM-powered applications &amp; integrations</li>
+            <li>AI agents &amp; tool-using workflows</li>
+            <li>Retrieval-Augmented Generation (RAG)</li>
+            <li>Prompt engineering &amp; evaluation</li>
+            <li>AI-driven business process automation</li>
+          </ul>
+        </article>
+        <article class="module">
+          <p class="module__id">MOD-02</p>
+          <h3>Cloud &amp; Event-Driven</h3>
+          <ul>
+            <li>Event-Driven Architecture on AWS</li>
+            <li>Lambda, API Gateway, Step Functions</li>
+            <li>SQS, SNS, EventBridge &amp; Kafka</li>
+            <li>Containers on ECS / Fargate</li>
+            <li>Observable cloud-native backends</li>
+          </ul>
+        </article>
+        <article class="module">
+          <p class="module__id">MOD-03</p>
+          <h3>Streaming &amp; Real-Time</h3>
+          <ul>
+            <li>Live &amp; on-demand media streaming</li>
+            <li>WebRTC, HLS, MPEG-DASH, RTMP, RTSP, SRT</li>
+            <li>Real-time communication with WebSockets</li>
+            <li>Data pipelines with Kafka &amp; Kinesis</li>
+            <li>Low-latency, high-throughput delivery</li>
+          </ul>
+        </article>
+        <article class="module">
+          <p class="module__id">MOD-04</p>
+          <h3>Software Engineering</h3>
+          <ul>
+            <li>Full-stack web development</li>
+            <li>Backend architecture &amp; API design</li>
+            <li>Microservices &amp; modular systems</li>
+            <li>Background jobs &amp; automation pipelines</li>
+            <li>High-performance web scraping</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== CONSTELLATION ===================== -->
+    <section class="section" id="constellation">
+      <header class="section__head">
+        <p class="eyebrow">04 · Tech constellation</p>
+        <h2>Stars I navigate by</h2>
+        <p class="section__sub">Five clusters, one sky. Dashed lines are the bridges I build between them.</p>
+      </header>
+
+      <div class="sky" id="sky"></div>
+
+      <div class="clusters">
+        <div><h3>Languages &amp; frameworks</h3><p>Python · TypeScript · JavaScript · C · C++ · C# · Go · Java · Node.js · NestJS · React</p></div>
+        <div><h3>AWS</h3><p>Lambda · API Gateway · EventBridge · SQS · SNS · Step Functions · Kinesis · DynamoDB · S3 · ECS/Fargate · EC2 · CloudFront · CloudWatch</p></div>
+        <div><h3>Data &amp; DevOps</h3><p>PostgreSQL · MongoDB · Redis · DynamoDB · Kafka · RabbitMQ · Docker · Linux · Git · GitHub Actions · Nginx</p></div>
+        <div><h3>AI &amp; ML</h3><p>Claude · OpenAI · LangChain · Hugging Face · PyTorch · Jupyter</p></div>
+        <div><h3>Streaming</h3><p>WebRTC · HLS · MPEG-DASH · RTMP · RTSP · SRT · WebSockets</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== MISSIONS ===================== -->
+    <section class="section" id="missions">
+      <header class="section__head">
+        <p class="eyebrow">05 · Selected missions</p>
+        <h2>Mission archive</h2>
+      </header>
+
+      <div class="archive">
+        <article><span class="archive__code">M-01</span><h3>AI Systems</h3><p>LLM-based tools and agents that automate real business workflows end-to-end.</p></article>
+        <article><span class="archive__code">M-02</span><h3>Streaming Platforms</h3><p>Live and on-demand video delivery across WebRTC, HLS, RTMP and SRT.</p></article>
+        <article><span class="archive__code">M-03</span><h3>Event-Driven Backends</h3><p>Decoupled, serverless architectures on AWS built around events and queues.</p></article>
+        <article><span class="archive__code">M-04</span><h3>Scraping &amp; Automation</h3><p>Custom frameworks for extracting data from dynamic web environments.</p></article>
+        <article><span class="archive__code">M-05</span><h3>NestJS Boilerplates</h3><p>Structured backend starters for scalable, enterprise-grade applications.</p></article>
+        <article><span class="archive__code">M-06</span><h3>Full-Stack Platforms</h3><p>Production systems with React/TypeScript frontends and Node/NestJS backends.</p></article>
+      </div>
+
+      <div class="beyond">
+        <h3 class="beyond__title">Beyond the code</h3>
+        <div class="beyond__grid">
+          <p><strong>AI reader.</strong> Transformers, attention mechanisms and the theory behind modern models.</p>
+          <p><strong>Math enthusiast.</strong> Mathematical models are how I understand complex systems.</p>
+          <p><strong>Complex algorithms.</strong> Turning elegant theory into efficient code.</p>
+          <p><strong>Reverse engineering.</strong> Taking software apart to see how it works, games especially.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COMMS ===================== -->
+    <section class="section comms" id="comms">
+      <p class="eyebrow">06 · Open comms</p>
+      <h2>Let's solve something hard</h2>
+      <p class="section__sub">Open to collaborations, AI projects and conversations about difficult problems.</p>
+      <a class="btn btn--primary btn--lg" href="mailto:e.juandav@gmail.com">Transmit to e.juandav@gmail.com</a>
+      <ul class="channels">
+        <li><a href="https://github.com/juandav" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://platzi.com/p/juandav/" target="_blank" rel="noopener">Platzi</a></li>
+        <li><a href="https://www.npmjs.com/~juandav" target="_blank" rel="noopener">npm</a></li>
+        <li><a href="https://www.youtube.com/channel/UCEhqocLIUf4eZgUaMKMIEYw" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Transmission end · <span id="year"></span> · juandav.github.io</p>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/cosmos.js" defer></script>
 </body>
 </html>
